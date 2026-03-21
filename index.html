@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Relatório KM</title>
+
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#25D366">
+
+<style>
+body {
+  font-family: Arial;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  background: url("fundo.png") no-repeat center center;
+  background-size: cover;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: -1;
+}
+
+.container {
+  width: 100%;
+  max-width: 420px;
+  padding: 20px;
+  background: rgba(0,0,0,0.7);
+  border-radius: 15px;
+}
+
+h2 {
+  text-align: center;
+}
+
+input, select {
+  width: 100%;
+  padding: 14px;
+  margin: 6px 0 15px;
+  border-radius: 8px;
+  border: none;
+}
+
+button {
+  width: 100%;
+  padding: 16px;
+  background: #25D366;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.top-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.top-buttons button {
+  background: #333;
+}
+
+.hidden {
+  display: none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Relatório de Veículo</h2>
+
+<div class="top-buttons">
+  <button onclick="selecionarTipo('inicial')">Km Inicial</button>
+  <button onclick="selecionarTipo('final')">Km Final</button>
+</div>
+
+<input type="hidden" id="data">
+
+<label>Placa:</label>
+<select id="placa" onchange="definirVeiculo()">
+  <option value="">Selecione</option>
+
+  <option value="SDQ2A25|Elétric">SDQ2A25 - Elétric</option>
+  <option value="SDQ2A29|Elétric">SDQ2A29 - Elétric</option>
+  <option value="SDQ2A30|Elétric">SDQ2A30 - Elétric</option>
+  <option value="SDP9J13|Elétric">SDP9J13 - Elétric</option>
+  <option value="SDP9J14|Elétric">SDP9J14 - Elétric</option>
+  <option value="SDP9J15|Elétric">SDP9J15 - Elétric</option>
+  <option value="SDP9J16|Elétric">SDP9J16 - Elétric</option>
+
+  <option value="SGL2D39|Van">SGL2D39 - Van</option>
+  <option value="STT3B07|Van">STT3B07 - Van</option>
+  <option value="SGH8C18|Van">SGH8C18 - Van</option>
+  <option value="STI1C79|Van">STI1C79 - Van</option>
+
+  <option value="TLK9H18|Fiorino">TLK9H18 - Fiorino</option>
+  <option value="UDF2D07|Fiorino">UDF2D07 - Fiorino</option>
+  <option value="UGT4A60|Fiorino">UGT4A60 - Fiorino</option>
+  <option value="UFG1I38|Fiorino">UFG1I38 - Fiorino</option>
+</select>
+
+<label>Tipo de veículo:</label>
+<input type="text" id="tipo" readonly>
+
+<label>Motorista:</label>
+<input type="text" id="motorista">
+
+<div id="campoInicial" class="hidden">
+  <label>Km Inicial:</label>
+  <input type="number" id="kmInicial">
+</div>
+
+<div id="campoFinal" class="hidden">
+  <label>Km Final:</label>
+  <input type="number" id="kmFinal">
+</div>
+
+<button onclick="enviar()">Enviar</button>
+
+</div>
+
+<script>
+
+// PWA
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("sw.js");
+}
+
+let tipoSelecionado = "";
+
+// DATA
+window.onload = function() {
+  let hoje = new Date();
+  let ano = hoje.getFullYear();
+  let mes = String(hoje.getMonth() + 1).padStart(2, '0');
+  let dia = String(hoje.getDate()).padStart(2, '0');
+
+  document.getElementById("data").value = `${ano}-${mes}-${dia}`;
+}
+
+// VEÍCULO
+function definirVeiculo() {
+  let valor = document.getElementById("placa").value;
+  if (!valor) return;
+
+  let partes = valor.split("|");
+  document.getElementById("tipo").value = partes[1];
+}
+
+// BOTÕES
+function selecionarTipo(tipo) {
+  tipoSelecionado = tipo;
+
+  document.getElementById("campoInicial").classList.add("hidden");
+  document.getElementById("campoFinal").classList.add("hidden");
+
+  if (tipo === "inicial") {
+    document.getElementById("campoInicial").classList.remove("hidden");
+  } else {
+    document.getElementById("campoFinal").classList.remove("hidden");
+  }
+}
+
+// ENVIO
+function enviar() {
+
+  let placaValor = document.getElementById("placa").value;
+  let motorista = document.getElementById("motorista").value.trim();
+  let data = document.getElementById("data").value;
+  let tipo = document.getElementById("tipo").value;
+
+  if (!placaValor || !motorista) {
+    alert("Preencha tudo");
+    return;
+  }
+
+  let partesNome = motorista.split(/\s+/);
+  if (partesNome.length < 2) {
+    alert("Digite nome e sobrenome");
+    return;
+  }
+
+  let placa = placaValor.split("|")[0];
+  let partes = data.split("-");
+  let dataFormatada = partes[2] + "/" + partes[1] + "/" + partes[0];
+
+  let km = "";
+  let jornada = "";
+
+  if (tipoSelecionado === "inicial") {
+    km = document.getElementById("kmInicial").value;
+    jornada = "Inicial";
+  } else {
+    km = document.getElementById("kmFinal").value;
+    jornada = "Final";
+  }
+
+  if (!km) {
+    alert("Informe o KM");
+    return;
+  }
+
+  // GOOGLE FORMS
+  let formURL = "https://docs.google.com/forms/d/e/1FAIpQLSeix5MZnyLhcfKGGPZ9tDorq0it3lHgCtqWjStNQk8P7T-L3g/formResponse?";
+  formURL += "entry.539990906=" + data;
+  formURL += "&entry.1842617813=" + encodeURIComponent(motorista);
+  formURL += "&entry.1659496168=" + placa;
+  formURL += "&entry.246432408=" + tipo;
+  formURL += "&entry.911419409=" + km;
+  formURL += "&entry.1663942632=" + jornada;
+
+  fetch(formURL, {method: "POST", mode: "no-cors"});
+
+  // WHATSAPP
+  let mensagem = "*🚧RELATÓRIO DE KM*\n";
+  mensagem += "Data: " + dataFormatada + "\n";
+  mensagem += "Motorista: " + motorista + "\n";
+  mensagem += "Placa: " + placa + "\n";
+  mensagem += "Tipo: " + tipo + "\n\n";
+  mensagem += "*KM " + jornada.toUpperCase() + "*\n";
+  mensagem += "Km: " + km;
+
+  let url = "https://wa.me/?text=" + encodeURIComponent(mensagem);
+  window.location.href = url;
+}
+
+</script>
+
+</body>
+</html>
