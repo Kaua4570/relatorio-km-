@@ -261,4 +261,11 @@ function enviar() {
 </script>
 
 </body>
+  <script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("/relatorio-km/sw.js")
+    .then(() => console.log("SW registrado"))
+    .catch(err => console.log("Erro SW:", err));
+}
+  </script>
 </html>
