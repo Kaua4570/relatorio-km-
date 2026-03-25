@@ -1,7 +1,7 @@
 {
   "name": "Relatório KM",
   "short_name": "KM",
-  "start_url": "./index.html",
+  "start_url": "/relatorio-km/index.html",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#25D366",
