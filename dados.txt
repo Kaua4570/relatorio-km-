@@ -11,8 +11,21 @@
 365=Ednei Jr
 
 # VEICULOS
-SDQ2A29|Eletrico
-SDQ2A25|Eletrico
+UFG1I38|Fiorino
 UGT4A60|Fiorino
+QSZ9I88|Fiorino
+SWU9J57|Fiorino
 TLK9H18|Fiorino
-SGL2D39|Vaneur
+
+STT3B07|Van Disel
+SGL2D39|Van Disel
+GHK1J44|Van Disel
+
+SDQ2A25|Eletrico
+SDQ2A26|Eletrico
+SDQ2A29|Eletrico
+SDQ2A30|Eletrico
+SDP9J13|Eletrico
+SDP9J14|Eletrico
+SDP9J15|Eletrico
+SDP9J16|Eletrico
