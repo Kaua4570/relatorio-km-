@@ -8,6 +8,7 @@
 944=Solange Tavares
 537=Laila Oliveira
 984=Jhony C Brito
+365=Ednei Jr
 
 # VEICULOS
 SDQ2A29|Eletrico
