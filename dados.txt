@@ -10,6 +10,7 @@
 984=Jhony C Brito
 
 # VEICULOS
+SDQ2A29|Eletrico
 SDQ2A25|Eletrico
 UGT4A60|Fiorino
 TLK9H18|Fiorino
