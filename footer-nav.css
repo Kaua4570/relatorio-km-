@@ -1,0 +1,151 @@
+/* ============ RODAPÉ ============ */
+.site-footer {
+  background: var(--coffee-deep);
+  color: rgba(245, 236, 224, 0.75);
+  padding: var(--sp-8) 0 calc(var(--bottom-nav-height) + var(--sp-6));
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-3);
+}
+
+.footer-brand-mark {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  color: var(--gold);
+  border-right: 1px solid rgba(245, 236, 224, 0.2);
+  padding-right: var(--sp-3);
+}
+
+.footer-brand-name {
+  font-family: var(--font-serif);
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  color: var(--cream-on-dark);
+}
+
+.footer-tagline {
+  font-family: var(--font-script);
+  color: var(--gold-soft);
+  font-size: 1.2rem;
+  margin-bottom: var(--sp-6);
+  display: block;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-6);
+}
+
+.footer-col-title {
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  color: var(--gold);
+  margin-bottom: var(--sp-3);
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.footer-links a {
+  font-size: 0.88rem;
+  transition: color var(--dur-fast) var(--ease-elegant);
+}
+
+.footer-links a:hover,
+.footer-links a:focus-visible {
+  color: var(--gold-soft);
+}
+
+.footer-bottom {
+  margin-top: var(--sp-7);
+  padding-top: var(--sp-5);
+  border-top: 1px solid rgba(245, 236, 224, 0.1);
+  font-family: var(--font-script);
+  color: var(--gold-soft);
+  font-size: 1.05rem;
+  text-align: center;
+}
+
+/* ============ BARRA INFERIOR MOBILE ============ */
+.bottom-nav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 95;
+  height: var(--bottom-nav-height);
+  background: var(--coffee-deep);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 var(--sp-2);
+  border-top: 1px solid rgba(245, 236, 224, 0.08);
+}
+
+.bottom-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  color: rgba(245, 236, 224, 0.55);
+  font-size: 0.62rem;
+  letter-spacing: 0.02em;
+  flex: 1;
+  padding: 6px 0;
+  position: relative;
+}
+
+.bottom-nav-item svg {
+  width: 20px;
+  height: 20px;
+}
+
+.bottom-nav-item.is-active {
+  color: var(--cream-on-dark);
+}
+
+.bottom-nav-item.is-active::after {
+  content: "";
+  position: absolute;
+  top: -1px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+
+.bottom-nav-item.is-cta {
+  color: var(--coffee-deep);
+  transform: translateY(-14px);
+}
+
+.bottom-nav-cta-circle {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--gold);
+  border: 3px solid var(--coffee-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 18px -8px rgba(0,0,0,0.5);
+  margin-bottom: 2px;
+}
+
+.bottom-nav-cta-circle svg {
+  width: 22px;
+  height: 22px;
+  color: var(--coffee-deep);
+}
+
+.bottom-nav-item.is-cta span {
+  color: rgba(245, 236, 224, 0.85);
+}

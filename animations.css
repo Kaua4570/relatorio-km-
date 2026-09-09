@@ -1,0 +1,91 @@
+/* ============ KEYFRAMES GERAIS ============ */
+@keyframes heroRise {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+/* Reveal ao rolar a página — aplicado via IntersectionObserver (reveal.js) */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 700ms var(--ease-elegant), transform 700ms var(--ease-elegant);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============ MICROANIMAÇÕES DOS ÍCONES DE SERVIÇO ============ */
+/* Todas lentas, discretas e contínuas — pausam com prefers-reduced-motion (ver base.css) */
+
+/* Tesoura (Cortes): abre e fecha muito devagar */
+@keyframes scissorBladeTop {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(-7deg); }
+}
+@keyframes scissorBladeBottom {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(7deg); }
+}
+.icon-scissors .blade-top {
+  transform-origin: 60% 50%;
+  animation: scissorBladeTop 4.5s ease-in-out infinite;
+}
+.icon-scissors .blade-bottom {
+  transform-origin: 60% 50%;
+  animation: scissorBladeBottom 4.5s ease-in-out infinite;
+}
+
+/* Secador (Escovas): pequenas linhas de fluxo de ar surgem e somem */
+@keyframes dryerAirflow {
+  0%, 100% { opacity: 0; transform: translateX(0); }
+  50% { opacity: 0.9; transform: translateX(4px); }
+}
+.icon-dryer .airflow-1 { animation: dryerAirflow 3.2s ease-in-out infinite; }
+.icon-dryer .airflow-2 { animation: dryerAirflow 3.2s ease-in-out infinite 0.5s; }
+.icon-dryer .airflow-3 { animation: dryerAirflow 3.2s ease-in-out infinite 1s; }
+
+/* Chapinha (Progressivas): aproximação/fechamento bem lento */
+@keyframes straightenerClose {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(-4deg); }
+}
+.icon-straightener .plate-top {
+  transform-origin: 20% 85%;
+  animation: straightenerClose 4.8s ease-in-out infinite;
+}
+
+/* Mechas: pequenos brilhos surgindo suavemente */
+@keyframes sparkleTwinkle {
+  0%, 100% { opacity: 0.15; transform: scale(0.85); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+.icon-sparkle .spark-a { animation: sparkleTwinkle 3s ease-in-out infinite; }
+.icon-sparkle .spark-b { animation: sparkleTwinkle 3s ease-in-out infinite 1s; }
+.icon-sparkle .spark-c { animation: sparkleTwinkle 3s ease-in-out infinite 2s; }
+
+/* Loiros: sol gira quase imperceptivelmente */
+@keyframes sunSlowSpin {
+  to { transform: rotate(360deg); }
+}
+.icon-sun .sun-rays {
+  transform-origin: center;
+  animation: sunSlowSpin 14s linear infinite;
+}
+
+/* Penteados: linhas/brilhos discretos aparecendo */
+@keyframes flowerShimmer {
+  0%, 100% { opacity: 0.25; }
+  50% { opacity: 0.9; }
+}
+.icon-flower .petal-shine { animation: flowerShimmer 3.6s ease-in-out infinite; }
+
+/* ============ CARROSSEL DE ONDAS DECORATIVAS (fundo sutil) ============ */
+@keyframes floatSoft {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}

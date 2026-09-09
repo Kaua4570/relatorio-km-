@@ -1,0 +1,104 @@
+/* ============ ESCOLHA SUA CATEGORIA (fundo escuro) ============ */
+.categories-section {
+  background: var(--coffee);
+  padding: var(--sp-8) 0;
+  color: var(--cream-on-dark);
+}
+
+.categories-head {
+  text-align: center;
+  margin-bottom: var(--sp-6);
+}
+
+.categories-title {
+  color: var(--cream-on-dark);
+  font-size: clamp(1.7rem, 5vw, 2.3rem);
+  line-height: 1.15;
+}
+
+.categories-title .highlight {
+  color: var(--gold);
+  display: block;
+}
+
+.category-pills {
+  display: flex;
+  gap: var(--sp-2);
+  overflow-x: auto;
+  padding-bottom: var(--sp-2);
+  margin-bottom: var(--sp-6);
+  scrollbar-width: none;
+}
+
+.category-pills::-webkit-scrollbar {
+  display: none;
+}
+
+.category-pill {
+  flex: 0 0 auto;
+  padding: 10px 20px;
+  border-radius: 999px;
+  border: 1px solid rgba(245, 236, 224, 0.25);
+  color: rgba(245, 236, 224, 0.8);
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  transition: background var(--dur-fast) var(--ease-elegant), color var(--dur-fast) var(--ease-elegant), border-color var(--dur-fast) var(--ease-elegant);
+}
+
+.category-pill.is-active,
+.category-pill:hover,
+.category-pill:focus-visible {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--coffee-deep);
+}
+
+.category-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-3);
+}
+
+.category-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  padding: var(--sp-4);
+  border-radius: var(--radius-md);
+  background: rgba(245, 236, 224, 0.04);
+  border: 1px solid rgba(245, 236, 224, 0.1);
+  opacity: 0;
+  transform: translateY(8px);
+  animation: catItemIn 500ms var(--ease-elegant) forwards;
+}
+
+@keyframes catItemIn {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.category-item-name {
+  font-family: var(--font-serif);
+  color: var(--cream-on-dark);
+  font-size: 1.05rem;
+}
+
+.category-item-desc {
+  font-size: 0.8rem;
+  color: rgba(245, 236, 224, 0.6);
+  margin-top: 2px;
+}
+
+.category-item-price {
+  text-align: right;
+  color: var(--gold);
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.category-item-duration {
+  display: block;
+  font-size: 0.7rem;
+  color: rgba(245, 236, 224, 0.55);
+  margin-top: 2px;
+}

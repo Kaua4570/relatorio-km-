@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="650" viewBox="0 0 500 650">
+  <defs>
+    <linearGradient id="gdestaque-5_svg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B2A20"/>
+      <stop offset="100%" stop-color="#7A5236"/>
+    </linearGradient>
+    <pattern id="dots_gdestaque-5_svg" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.1" fill="#C9A063" opacity="0.18"/>
+    </pattern>
+  </defs>
+  <rect width="500" height="650" fill="url(#gdestaque-5_svg)"/>
+  <rect width="500" height="650" fill="url(#dots_gdestaque-5_svg)"/>
+  <g opacity="0.9">
+    <line x1="210.0" y1="319.0" x2="290.0" y2="319.0" stroke="#C9A063" stroke-width="1"/>
+  </g>
+  <text x="50%" y="50%" text-anchor="middle" font-family="Georgia, serif" font-size="22.5" fill="#F5EDE4" letter-spacing="2">PENTEADOS</text>
+  <text x="50%" y="353.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="13.0" fill="#E7D2AE" letter-spacing="3">RESULTADO — SUBSTITUIR</text>
+</svg>

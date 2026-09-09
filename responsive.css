@@ -1,0 +1,166 @@
+/* ============ TABLET (>= 600px) ============ */
+@media (min-width: 600px) {
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .differentials {
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .booking-modal {
+    max-width: 480px;
+    margin: 0 auto;
+    border-radius: 24px;
+    align-self: center;
+  }
+
+  .booking-overlay {
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* ============ DESKTOP (>= 1024px) ============ */
+@media (min-width: 1024px) {
+  body {
+    font-size: 17px;
+  }
+
+  /* Header vira menu horizontal */
+  .menu-toggle,
+  .mobile-menu {
+    display: none;
+  }
+
+  .desktop-nav {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-6);
+  }
+
+  .desktop-nav a {
+    font-size: 0.85rem;
+    letter-spacing: 0.04em;
+    color: var(--brown-text);
+    position: relative;
+    padding: 4px 0;
+    transition: color var(--dur-fast) var(--ease-elegant);
+  }
+
+  .desktop-nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 1px;
+    background: var(--gold);
+    transition: width var(--dur-fast) var(--ease-elegant);
+  }
+
+  .desktop-nav a:hover,
+  .desktop-nav a:focus-visible {
+    color: var(--coffee);
+  }
+
+  .desktop-nav a:hover::after,
+  .desktop-nav a:focus-visible::after {
+    width: 100%;
+  }
+
+  .desktop-nav .btn {
+    padding: 12px 22px;
+  }
+
+  /* Barra inferior e whatsapp flutuante somem no desktop, viram parte do header/rodapé */
+  .bottom-nav {
+    display: none;
+  }
+
+  .whatsapp-float {
+    bottom: var(--sp-5);
+  }
+
+  .site-footer {
+    padding-bottom: var(--sp-8);
+  }
+
+  /* Hero ocupa mais altura e centraliza conteúdo com respiro maior */
+  .hero {
+    min-height: 680px;
+  }
+
+  .hero-content {
+    padding: 0 var(--sp-9) var(--sp-9);
+    max-width: 720px;
+  }
+
+  /* Grid de serviços com mais colunas */
+  .services-grid {
+    grid-template-columns: repeat(6, 1fr);
+    gap: var(--sp-5);
+  }
+
+  .section {
+    padding: var(--sp-9) 0;
+  }
+
+  /* Categorias: pills centralizadas, lista em duas colunas */
+  .category-pills {
+    justify-content: center;
+    overflow: visible;
+    flex-wrap: wrap;
+  }
+
+  .category-list {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  /* Destaques: carrossel com cards maiores, sem scroll snap forçado no mouse */
+  .highlight-card {
+    width: 260px;
+  }
+
+  /* Sobre: duas colunas — imagem | texto */
+  .about-section .container {
+    display: grid;
+    grid-template-columns: 0.85fr 1fr;
+    gap: var(--sp-9);
+    align-items: center;
+  }
+
+  .about-photo {
+    margin-bottom: 0;
+  }
+
+  .differentials {
+    grid-column: 1 / -1;
+    max-width: none;
+    margin-top: var(--sp-8);
+  }
+
+  /* Galeria em grid maior */
+  .gallery-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* Modal de agendamento centralizado como card, não como sheet */
+  .booking-modal {
+    max-width: 520px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .hero-title {
+    font-size: 4rem;
+  }
+}

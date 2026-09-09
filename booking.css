@@ -1,0 +1,399 @@
+/* ============ MODAL DE AGENDAMENTO ============ */
+.booking-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 250;
+  background: rgba(20, 14, 10, 0.55);
+  display: flex;
+  align-items: flex-end;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--dur-mid) var(--ease-elegant);
+}
+
+.booking-overlay.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.booking-modal {
+  width: 100%;
+  max-height: 92vh;
+  background: var(--cream);
+  border-radius: 24px 24px 0 0;
+  padding: var(--sp-5);
+  padding-bottom: var(--sp-7);
+  overflow-y: auto;
+  transform: translateY(30px);
+  transition: transform var(--dur-mid) var(--ease-elegant);
+}
+
+.booking-overlay.is-open .booking-modal {
+  transform: translateY(0);
+}
+
+.booking-modal-handle {
+  width: 40px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--cream-deep);
+  margin: 0 auto var(--sp-4);
+}
+
+.booking-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--sp-5);
+}
+
+.booking-title {
+  font-size: 1.15rem;
+}
+
+.booking-close {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--brown-text-soft);
+}
+
+.booking-close:hover {
+  background: var(--cream-alt);
+}
+
+.booking-close svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Indicador de progresso */
+.booking-progress {
+  display: flex;
+  gap: 6px;
+  margin-bottom: var(--sp-6);
+}
+
+.booking-progress-step {
+  flex: 1;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--cream-deep);
+  overflow: hidden;
+}
+
+.booking-progress-step.is-active,
+.booking-progress-step.is-done {
+  background: var(--gold);
+}
+
+.booking-step {
+  display: none;
+}
+
+.booking-step.is-active {
+  display: block;
+  animation: fadeInStep 380ms var(--ease-elegant);
+}
+
+@keyframes fadeInStep {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.booking-step-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  color: var(--gold);
+  margin-bottom: var(--sp-2);
+}
+
+.booking-step-title {
+  font-size: 1.3rem;
+  margin-bottom: var(--sp-5);
+}
+
+/* Passo 1 — serviços */
+.booking-service-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-6);
+}
+
+.booking-service-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--sp-4);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--cream-deep);
+  background: var(--cream-alt);
+  transition: border-color var(--dur-fast) var(--ease-elegant), background var(--dur-fast) var(--ease-elegant);
+  text-align: left;
+  width: 100%;
+}
+
+.booking-service-option.is-selected,
+.booking-service-option:hover {
+  border-color: var(--gold);
+}
+
+.booking-service-option.is-selected {
+  background: rgba(201, 160, 99, 0.14);
+}
+
+.booking-service-option-name {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  color: var(--coffee);
+}
+
+.booking-service-option-meta {
+  font-size: 0.74rem;
+  color: var(--brown-text-soft);
+  margin-top: 2px;
+}
+
+.booking-service-option-price {
+  font-size: 0.92rem;
+  color: var(--gold);
+  white-space: nowrap;
+}
+
+/* Passo 2 — calendário */
+.booking-calendar {
+  margin-bottom: var(--sp-6);
+}
+
+.booking-calendar-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--sp-4);
+}
+
+.booking-calendar-title {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  color: var(--coffee);
+  text-transform: capitalize;
+}
+
+.booking-calendar-nav {
+  display: flex;
+  gap: var(--sp-2);
+}
+
+.booking-calendar-nav button {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--cream-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--coffee);
+}
+
+.booking-calendar-nav button:hover {
+  border-color: var(--gold);
+}
+
+.booking-calendar-nav button svg {
+  width: 14px;
+  height: 14px;
+}
+
+.booking-calendar-weekdays,
+.booking-calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  text-align: center;
+}
+
+.booking-calendar-weekdays span {
+  font-size: 0.65rem;
+  color: var(--brown-text-soft);
+  padding-bottom: var(--sp-2);
+}
+
+.booking-day {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 0.85rem;
+  color: var(--brown-text);
+  transition: background var(--dur-fast) var(--ease-elegant), color var(--dur-fast) var(--ease-elegant);
+}
+
+.booking-day.is-empty {
+  visibility: hidden;
+}
+
+.booking-day.is-disabled {
+  color: var(--cream-deep);
+  text-decoration: line-through;
+  pointer-events: none;
+}
+
+.booking-day:hover:not(.is-disabled):not(.is-empty) {
+  background: var(--cream-alt);
+}
+
+.booking-day.is-selected {
+  background: var(--coffee);
+  color: var(--cream-on-dark);
+}
+
+/* Passo 3 — horários */
+.booking-times-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-6);
+}
+
+.booking-time-option {
+  padding: 12px 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--cream-deep);
+  background: var(--cream-alt);
+  font-size: 0.85rem;
+  color: var(--brown-text);
+  text-align: center;
+  transition: border-color var(--dur-fast) var(--ease-elegant), background var(--dur-fast) var(--ease-elegant);
+}
+
+.booking-time-option:hover:not(.is-disabled) {
+  border-color: var(--gold);
+}
+
+.booking-time-option.is-selected {
+  background: var(--coffee);
+  border-color: var(--coffee);
+  color: var(--cream-on-dark);
+}
+
+.booking-time-option.is-disabled {
+  opacity: 0.4;
+  text-decoration: line-through;
+  pointer-events: none;
+}
+
+/* Passo 4 — dados */
+.booking-field {
+  margin-bottom: var(--sp-4);
+}
+
+.booking-field label {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--brown-text-soft);
+  margin-bottom: var(--sp-2);
+}
+
+.booking-field input {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--cream-deep);
+  background: var(--cream-alt);
+  font-size: 0.95rem;
+  color: var(--brown-text);
+}
+
+.booking-field input:focus {
+  border-color: var(--gold);
+  outline: none;
+}
+
+/* Passo 5 — resumo */
+.booking-summary {
+  background: var(--cream-alt);
+  border-radius: var(--radius-md);
+  padding: var(--sp-5);
+  margin-bottom: var(--sp-6);
+}
+
+.booking-summary-title {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  margin-bottom: var(--sp-3);
+  color: var(--coffee);
+}
+
+.booking-summary-row {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--sp-2) 0;
+  border-bottom: 1px solid var(--cream-deep);
+  font-size: 0.9rem;
+}
+
+.booking-summary-row:last-child {
+  border-bottom: none;
+}
+
+.booking-summary-row span:first-child {
+  color: var(--brown-text-soft);
+}
+
+.booking-summary-row span:last-child {
+  color: var(--coffee);
+  font-weight: 500;
+}
+
+.booking-nav {
+  display: flex;
+  gap: var(--sp-3);
+}
+
+.booking-nav .btn {
+  flex: 1;
+}
+
+/* Confirmação */
+.booking-confirm {
+  text-align: center;
+  padding: var(--sp-5) 0;
+}
+
+.booking-confirm-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto var(--sp-5);
+  border-radius: 50%;
+  background: rgba(201, 160, 99, 0.16);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+}
+
+.booking-confirm-icon svg {
+  width: 30px;
+  height: 30px;
+}
+
+.booking-confirm-title {
+  font-size: 1.4rem;
+  margin-bottom: var(--sp-2);
+}
+
+.booking-confirm-text {
+  color: var(--brown-text-soft);
+  margin-bottom: var(--sp-5);
+}
+
+.booking-confirm-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}

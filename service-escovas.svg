@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="750" viewBox="0 0 600 750">
+  <defs>
+    <linearGradient id="gservice-escovas_svg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4A3222"/>
+      <stop offset="100%" stop-color="#8C6239"/>
+    </linearGradient>
+    <pattern id="dots_gservice-escovas_svg" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.1" fill="#C9A063" opacity="0.18"/>
+    </pattern>
+  </defs>
+  <rect width="600" height="750" fill="url(#gservice-escovas_svg)"/>
+  <rect width="600" height="750" fill="url(#dots_gservice-escovas_svg)"/>
+  <g opacity="0.9">
+    <line x1="260.0" y1="369.0" x2="340.0" y2="369.0" stroke="#C9A063" stroke-width="1"/>
+  </g>
+  <text x="50%" y="50%" text-anchor="middle" font-family="Georgia, serif" font-size="27.0" fill="#F5EDE4" letter-spacing="2">ESCOVAS</text>
+  <text x="50%" y="403.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="15.6" fill="#E7D2AE" letter-spacing="3">FOTO — SUBSTITUIR</text>
+</svg>

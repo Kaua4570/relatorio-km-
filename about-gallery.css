@@ -1,0 +1,219 @@
+/* ============ SOBRE O STUDIO ============ */
+.about-section {
+  padding: var(--sp-8) 0 var(--sp-6);
+}
+
+.about-photo {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  margin-bottom: var(--sp-6);
+}
+
+.about-photo img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.about-script {
+  font-size: 1.6rem;
+  display: block;
+  margin-bottom: var(--sp-2);
+}
+
+.about-title {
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  line-height: 1.2;
+}
+
+.about-text {
+  margin-top: var(--sp-4);
+  color: var(--brown-text-soft);
+  max-width: 56ch;
+}
+
+.about-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  margin-top: var(--sp-5);
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  color: var(--coffee);
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 3px;
+  transition: color var(--dur-fast) var(--ease-elegant), gap var(--dur-fast) var(--ease-elegant);
+}
+
+.about-link svg {
+  width: 14px;
+  height: 14px;
+  transition: transform var(--dur-fast) var(--ease-elegant);
+}
+
+.about-link:hover svg,
+.about-link:focus-visible svg {
+  transform: translateX(3px);
+}
+
+/* ============ DIFERENCIAIS ============ */
+.differentials {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-4);
+  margin-top: var(--sp-7);
+  text-align: center;
+}
+
+.differential-icon {
+  width: 30px;
+  height: 30px;
+  margin: 0 auto var(--sp-2);
+  color: var(--gold);
+}
+
+.differential-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.differential-value {
+  font-family: var(--font-serif);
+  color: var(--coffee);
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+.differential-label {
+  font-size: 0.72rem;
+  color: var(--brown-text-soft);
+  margin-top: 2px;
+}
+
+/* ============ GALERIA ============ */
+.gallery-section {
+  padding: var(--sp-8) 0;
+  background: var(--cream-alt);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--sp-3);
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  box-shadow: var(--shadow-card);
+  transition: opacity var(--dur-mid) var(--ease-elegant), transform var(--dur-mid) var(--ease-elegant);
+}
+
+.gallery-item.is-hidden {
+  display: none;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 600ms var(--ease-elegant);
+}
+
+.gallery-item:hover img,
+.gallery-item:focus-visible img {
+  transform: scale(1.07);
+}
+
+.gallery-item-tag {
+  position: absolute;
+  left: 8px;
+  bottom: 8px;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  background: rgba(24, 17, 12, 0.55);
+  color: var(--cream-on-dark);
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  background: rgba(20, 14, 10, 0.94);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sp-5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--dur-mid) var(--ease-elegant);
+}
+
+.lightbox.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox img {
+  max-width: 100%;
+  max-height: 82vh;
+  border-radius: var(--radius-md);
+  box-shadow: 0 30px 60px -20px rgba(0,0,0,0.6);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: var(--sp-5);
+  right: var(--sp-5);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  color: var(--cream-on-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-close:hover {
+  background: rgba(245, 236, 224, 0.1);
+}
+
+.lightbox-close svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ============ WHATSAPP FLUTUANTE ============ */
+.whatsapp-float {
+  position: fixed;
+  right: var(--sp-4);
+  bottom: calc(var(--bottom-nav-height) + var(--sp-4));
+  z-index: 90;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--coffee);
+  border: 1px solid var(--gold);
+  color: var(--cream-on-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-soft);
+  transition: transform var(--dur-fast) var(--ease-elegant);
+}
+
+.whatsapp-float svg {
+  width: 24px;
+  height: 24px;
+}
+
+.whatsapp-float:hover,
+.whatsapp-float:focus-visible {
+  transform: scale(1.06);
+}

@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Studio Alcione Moraes — Beleza que transforma</title>
+<meta name="description" content="Studio Alcione Moraes: cortes, escovas, progressivas, mechas, loiros e penteados. Atendimento personalizado e agendamento online.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Alex+Brush&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="variables.css">
+<link rel="stylesheet" href="base.css">
+<link rel="stylesheet" href="animations.css">
+<link rel="stylesheet" href="header.css">
+<link rel="stylesheet" href="hero.css">
+<link rel="stylesheet" href="services.css">
+<link rel="stylesheet" href="categories.css">
+<link rel="stylesheet" href="highlights.css">
+<link rel="stylesheet" href="about-gallery.css">
+<link rel="stylesheet" href="booking.css">
+<link rel="stylesheet" href="footer-nav.css">
+<link rel="stylesheet" href="responsive.css">
+</head>
+<body>
+
+<!-- ===================== HEADER ===================== -->
+<header class="site-header">
+  <div class="container">
+    <div class="brand">
+      <span class="brand-mark">AM</span>
+      <div class="brand-name">
+        <strong>STUDIO<br>ALCIONE MORAES</strong>
+        <span class="brand-sub">BELEZA QUE TRANSFORMA</span>
+      </div>
+    </div>
+
+    <nav class="desktop-nav" aria-label="Navegação principal">
+      <a href="#inicio">Início</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#destaques">Destaques</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#contato">Contato</a>
+      <a class="btn btn-primary" href="#agendamento" data-open-booking><span data-icon="calendar"></span> Agendar</a>
+    </nav>
+
+    <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" data-icon="menu"></button>
+  </div>
+</header>
+
+<!-- ===================== MENU FULLSCREEN MOBILE ===================== -->
+<nav class="mobile-menu" aria-label="Menu">
+  <button class="mobile-menu-close" aria-label="Fechar menu" data-icon="close"></button>
+  <ul>
+    <li><a href="#inicio">Início</a></li>
+    <li><a href="#servicos">Serviços</a></li>
+    <li><a href="#destaques">Destaques</a></li>
+    <li><a href="#sobre">Sobre o Studio</a></li>
+    <li><a href="#galeria">Galeria</a></li>
+    <li><a href="#agendamento" data-open-booking>Agendamento</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+  <div class="mobile-menu-footer">
+    <span data-whatsapp-display></span>
+    <a href="#" data-instagram-href><span data-instagram-handle></span></a>
+  </div>
+</nav>
+
+<main>
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" id="inicio">
+    <div class="hero-slides">
+      <div class="hero-slide is-active">
+        <img src="hero-1.svg" alt="Cabelo com mechas iluminadas, cuidado do Studio Alcione Moraes">
+      </div>
+      <div class="hero-slide">
+        <img src="hero-2.svg" alt="Resultado de coloração do Studio Alcione Moraes">
+      </div>
+      <div class="hero-slide">
+        <img src="hero-3.svg" alt="Cabelo tratado no Studio Alcione Moraes">
+      </div>
+      <div class="hero-overlay"></div>
+    </div>
+
+    <div class="hero-content">
+      <span class="hero-eyebrow">CUIDADO • TÉCNICA • EXCELÊNCIA</span>
+      <h1 class="hero-title">REALCE SUA<span class="script">beleza</span></h1>
+      <p class="hero-text">Com um atendimento personalizado e resultados que fazem a diferença.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#agendamento" data-open-booking>
+          <span data-icon="calendar"></span> AGENDAR HORÁRIO <span data-icon="arrowRight"></span>
+        </a>
+      </div>
+    </div>
+
+    <span class="hero-quote script">Seu cabelo,<br>nossa paixão!</span>
+    <div class="hero-dots">
+      <span class="hero-dot is-active"></span>
+      <span class="hero-dot"></span>
+      <span class="hero-dot"></span>
+    </div>
+  </section>
+
+  <!-- ===================== SERVIÇOS ===================== -->
+  <section class="section" id="servicos">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="section-head-divider"><span class="line"></span><span data-icon="sparkleSingle" style="width:14px;height:14px;color:var(--gold)"></span><span class="line"></span></div>
+        <h2 class="section-title">NOSSOS SERVIÇOS</h2>
+        <p class="section-lead">Cada serviço é pensado para realçar o que há de mais bonito em você.</p>
+      </div>
+
+      <div class="services-grid" data-services-grid></div>
+
+      <div class="section-cta">
+        <a class="btn btn-outline" href="#categorias">VER TODOS OS SERVIÇOS <span data-icon="arrowRight"></span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CATEGORIAS ===================== -->
+  <section class="categories-section" id="categorias">
+    <div class="container">
+      <div class="categories-head reveal">
+        <h2 class="categories-title">ESCOLHA SUA<span class="highlight">CATEGORIA</span></h2>
+      </div>
+
+      <div class="category-pills" data-category-pills></div>
+      <div class="category-list" data-category-list></div>
+    </div>
+  </section>
+
+  <!-- ===================== DESTAQUES ===================== -->
+  <section class="highlights-section" id="destaques">
+    <div class="container">
+      <div class="highlights-head reveal">
+        <div class="section-head-divider" style="justify-content:flex-start"><span class="eyebrow">DESTAQUES</span></div>
+        <h2 class="section-title">RESULTADOS<span class="script" style="display:block">que inspiram</span></h2>
+        <p class="section-lead">Transformações reais, histórias únicas e clientes ainda mais confiantes.</p>
+      </div>
+    </div>
+
+    <div class="highlights-carousel" data-highlights-track></div>
+
+    <div class="container">
+      <div class="highlights-dots" data-highlights-dots></div>
+      <div class="section-cta">
+        <a class="btn btn-outline" href="#galeria">VER GALERIA <span data-icon="arrowRight"></span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SOBRE O STUDIO ===================== -->
+  <section class="section about-section" id="sobre">
+    <div class="container">
+      <div class="about-photo reveal">
+        <img src="sobre-proprietaria.svg" alt="Alcione Moraes, proprietária do Studio Alcione Moraes">
+      </div>
+
+      <div class="about-copy reveal">
+        <span class="script about-script">Sobre o Studio</span>
+        <h2 class="about-title">Muito mais que um atendimento.</h2>
+        <p class="about-text">Cada cabelo possui uma história, um estilo e uma personalidade. No Studio Alcione Moraes, cada atendimento é pensado para valorizar sua beleza, respeitando seu cabelo e buscando um resultado que faça você se sentir ainda mais confiante.</p>
+        <a class="about-link" href="#galeria">CONHEÇA MAIS <span data-icon="arrowRight"></span></a>
+
+        <div class="differentials">
+          <div>
+            <div class="differential-icon" data-icon="award"></div>
+            <div class="differential-value">+ de 10 anos<br>de experiência</div>
+          </div>
+          <div>
+            <div class="differential-icon" data-icon="heartUsers"></div>
+            <div class="differential-value">+ de 1.000<br>clientes atendidas</div>
+          </div>
+          <div>
+            <div class="differential-icon" data-icon="sparkleSingle"></div>
+            <div class="differential-value">Atendimento<br>personalizado</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== GALERIA ===================== -->
+  <section class="gallery-section" id="galeria">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="section-head-divider"><span class="line"></span><span class="eyebrow">PORTFÓLIO</span><span class="line"></span></div>
+        <h2 class="section-title">NOSSO TRABALHO</h2>
+        <p class="section-lead">Resultados reais de quem confia no Studio Alcione Moraes.</p>
+      </div>
+
+      <div class="category-pills" data-gallery-pills style="justify-content:center;margin-bottom:var(--sp-5)"></div>
+      <div class="gallery-grid" data-gallery-grid></div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTATO / CTA FINAL ===================== -->
+  <section class="categories-section" id="contato">
+    <div class="container" style="text-align:center">
+      <h2 class="categories-title reveal">VAMOS CUIDAR<span class="highlight">do seu cabelo?</span></h2>
+      <p class="section-lead reveal" style="margin:var(--sp-3) auto var(--sp-6);color:rgba(245,236,224,0.75)">Fale com a gente pelo WhatsApp ou agende seu horário agora mesmo.</p>
+      <div class="reveal" style="display:flex;flex-direction:column;gap:var(--sp-3);align-items:center">
+        <a class="btn btn-primary btn-block" style="max-width:320px" href="#agendamento" data-open-booking>
+          <span data-icon="calendar"></span> AGENDAR HORÁRIO
+        </a>
+        <a class="btn btn-outline-light btn-block" style="max-width:320px" href="#" data-whatsapp-href target="_blank" rel="noopener">
+          <span data-icon="whatsapp"></span> FALAR NO WHATSAPP
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ===================== RODAPÉ ===================== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-brand">
+      <span class="footer-brand-mark">AM</span>
+      <span class="footer-brand-name">STUDIO ALCIONE MORAES</span>
+    </div>
+    <span class="footer-tagline">Beleza que transforma.</span>
+
+    <div class="footer-grid">
+      <div>
+        <div class="footer-col-title">NAVEGAÇÃO</div>
+        <div class="footer-links">
+          <a href="#inicio">Início</a>
+          <a href="#servicos">Serviços</a>
+          <a href="#galeria">Galeria</a>
+          <a href="#sobre">Sobre</a>
+          <a href="#agendamento" data-open-booking>Agendamento</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-col-title">CONTATO</div>
+        <div class="footer-links">
+          <a href="#" data-whatsapp-href target="_blank" rel="noopener">WhatsApp: <span data-whatsapp-display></span></a>
+          <a href="#" data-instagram-href target="_blank" rel="noopener"><span data-instagram-handle></span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">Realce quem você é, todos os dias.</div>
+  </div>
+</footer>
+
+<!-- ===================== WHATSAPP FLUTUANTE ===================== -->
+<a class="whatsapp-float" href="#" data-whatsapp-href target="_blank" rel="noopener" aria-label="Falar no WhatsApp" data-icon="whatsapp"></a>
+
+<!-- ===================== BARRA INFERIOR MOBILE ===================== -->
+<nav class="bottom-nav" aria-label="Navegação inferior">
+  <a class="bottom-nav-item is-active" href="#inicio" data-target="#inicio" data-icon="home"><span>Início</span></a>
+  <a class="bottom-nav-item" href="#servicos" data-target="#servicos" data-icon="scissors"><span>Serviços</span></a>
+  <a class="bottom-nav-item is-cta" href="#agendamento" data-open-booking>
+    <span class="bottom-nav-cta-circle" data-icon="calendar"></span>
+    <span>Agendar</span>
+  </a>
+  <a class="bottom-nav-item" href="#galeria" data-target="#galeria" data-icon="gallery"><span>Galeria</span></a>
+  <a class="bottom-nav-item" href="#sobre" data-target="#sobre" data-icon="user"><span>Sobre</span></a>
+</nav>
+
+<!-- ===================== LIGHTBOX DA GALERIA ===================== -->
+<div class="lightbox">
+  <button class="lightbox-close" aria-label="Fechar" data-icon="close"></button>
+  <img src="" alt="">
+</div>
+
+<!-- ===================== MODAL DE AGENDAMENTO ===================== -->
+<div class="booking-overlay">
+  <div class="booking-modal" role="dialog" aria-modal="true" aria-label="Agendamento">
+    <div class="booking-modal-handle"></div>
+    <div class="booking-header">
+      <h3 class="booking-title">Agendar horário</h3>
+      <button class="booking-close" data-booking-close aria-label="Fechar" data-icon="close"></button>
+    </div>
+
+    <div class="booking-progress">
+      <div class="booking-progress-step is-active"></div>
+      <div class="booking-progress-step"></div>
+      <div class="booking-progress-step"></div>
+      <div class="booking-progress-step"></div>
+      <div class="booking-progress-step"></div>
+    </div>
+
+    <!-- PASSO 1 -->
+    <div class="booking-step is-active" data-step="1">
+      <span class="booking-step-label">PASSO 1 DE 5</span>
+      <h4 class="booking-step-title">Escolha seu serviço</h4>
+      <div class="booking-service-list" data-booking-service-list></div>
+      <button class="btn btn-primary btn-block" data-step-next="1">CONTINUAR <span data-icon="arrowRight"></span></button>
+    </div>
+
+    <!-- PASSO 2 -->
+    <div class="booking-step" data-step="2">
+      <span class="booking-step-label">PASSO 2 DE 5</span>
+      <h4 class="booking-step-title">Escolha a data</h4>
+      <div class="booking-calendar">
+        <div class="booking-calendar-head">
+          <span class="booking-calendar-title" data-calendar-title></span>
+          <div class="booking-calendar-nav">
+            <button data-calendar-prev aria-label="Mês anterior" data-icon="chevronLeft"></button>
+            <button data-calendar-next aria-label="Próximo mês" data-icon="chevronRight"></button>
+          </div>
+        </div>
+        <div class="booking-calendar-weekdays" data-calendar-weekdays></div>
+        <div class="booking-calendar-grid" data-calendar-grid></div>
+      </div>
+      <div class="booking-nav">
+        <button class="btn btn-outline" data-step-back="2">VOLTAR</button>
+        <button class="btn btn-primary" data-step-next="2">CONTINUAR <span data-icon="arrowRight"></span></button>
+      </div>
+    </div>
+
+    <!-- PASSO 3 -->
+    <div class="booking-step" data-step="3">
+      <span class="booking-step-label">PASSO 3 DE 5</span>
+      <h4 class="booking-step-title">Escolha o horário</h4>
+      <div class="booking-times-grid" data-time-grid></div>
+      <div class="booking-nav">
+        <button class="btn btn-outline" data-step-back="3">VOLTAR</button>
+        <button class="btn btn-primary" data-step-next="3">CONTINUAR <span data-icon="arrowRight"></span></button>
+      </div>
+    </div>
+
+    <!-- PASSO 4 -->
+    <div class="booking-step" data-step="4">
+      <span class="booking-step-label">PASSO 4 DE 5</span>
+      <h4 class="booking-step-title">Seus dados</h4>
+      <div class="booking-field">
+        <label for="booking-name">Nome</label>
+        <input type="text" id="booking-name" placeholder="Seu nome completo" autocomplete="name">
+      </div>
+      <div class="booking-field">
+        <label for="booking-whatsapp">WhatsApp</label>
+        <input type="tel" id="booking-whatsapp" placeholder="(61) 90000-0000" autocomplete="tel">
+      </div>
+      <div class="booking-nav">
+        <button class="btn btn-outline" data-step-back="4">VOLTAR</button>
+        <button class="btn btn-primary" data-step-next="4">CONTINUAR <span data-icon="arrowRight"></span></button>
+      </div>
+    </div>
+
+    <!-- PASSO 5 -->
+    <div class="booking-step" data-step="5">
+      <span class="booking-step-label">PASSO 5 DE 5</span>
+      <h4 class="booking-step-title">Seu agendamento</h4>
+      <div class="booking-summary">
+        <div class="booking-summary-title">Resumo</div>
+        <div data-booking-summary></div>
+      </div>
+      <div class="booking-nav">
+        <button class="btn btn-outline" data-step-back="5">VOLTAR</button>
+        <button class="btn btn-primary" data-step-next="5">CONFIRMAR AGENDAMENTO</button>
+      </div>
+    </div>
+
+    <!-- CONFIRMAÇÃO -->
+    <div class="booking-step" data-step="6">
+      <div class="booking-confirm" data-booking-confirmation>
+        <div class="booking-confirm-icon" data-icon="check"></div>
+        <h4 class="booking-confirm-title">Agendamento confirmado! ✨</h4>
+        <p class="booking-confirm-text">Seu horário está reservado.</p>
+        <div class="booking-summary" style="text-align:left">
+          <div class="booking-summary-row"><span>Serviço</span><span data-confirm-service></span></div>
+          <div class="booking-summary-row"><span>Data</span><span data-confirm-date></span></div>
+          <div class="booking-summary-row"><span>Horário</span><span data-confirm-time></span></div>
+        </div>
+        <div class="booking-confirm-actions">
+          <a class="btn btn-primary btn-block" data-whatsapp-link target="_blank" rel="noopener"><span data-icon="whatsapp"></span> FALAR NO WHATSAPP</a>
+          <button class="btn btn-outline btn-block" data-booking-restart>VOLTAR PARA O INÍCIO</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="icons.js"></script>
+<script src="data.js"></script>
+<script src="render.js"></script>
+<script src="navigation.js"></script>
+<script src="hero.js"></script>
+<script src="reveal.js"></script>
+<script src="gallery.js"></script>
+<script src="booking.js"></script>
+<script src="main.js"></script>
+<script>
+  // Substitui todo elemento com [data-icon] pelo SVG correspondente de icons.js
+  document.querySelectorAll("[data-icon]").forEach((el) => {
+    const name = el.getAttribute("data-icon");
+    if (ICONS[name]) el.innerHTML = ICONS[name];
+  });
+</script>
+</body>
+</html>

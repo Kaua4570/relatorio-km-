@@ -1,0 +1,47 @@
+:root {
+  /* ---- Cores base ---- */
+  --cream: #F6EFE6;           /* fundo geral */
+  --cream-alt: #EFE4D3;       /* fundo de cards, levemente diferente do fundo */
+  --cream-deep: #E8DAC4;      /* divisores suaves sobre creme */
+  --coffee: #3B2A20;          /* marrom café / chocolate — áreas de destaque */
+  --coffee-deep: #2C1F17;     /* marrom mais escuro — rodapé, menu inferior */
+  --brown-text: #5C4433;      /* marrom médio — textos */
+  --brown-text-soft: #7A6350; /* marrom mais claro para textos secundários */
+  --gold: #C9A063;            /* dourado / champagne — detalhes */
+  --gold-soft: #E3CFA4;       /* dourado claro para linhas/realces sutis */
+  --cream-on-dark: #F5ECE0;   /* texto claro sobre fundos escuros */
+
+  /* ---- Tipografia ---- */
+  --font-serif: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+  --font-script: "Alex Brush", "Dancing Script", cursive;
+  --font-sans: "Jost", "Poppins", -apple-system, sans-serif;
+
+  /* ---- Espaçamento (escala 4px) ---- */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 24px;
+  --sp-6: 32px;
+  --sp-7: 48px;
+  --sp-8: 64px;
+  --sp-9: 96px;
+
+  /* ---- Raios e sombras ---- */
+  --radius-sm: 6px;
+  --radius-md: 14px;
+  --radius-lg: 28px;
+  --shadow-soft: 0 12px 28px -12px rgba(44, 31, 23, 0.22);
+  --shadow-card: 0 8px 20px -10px rgba(44, 31, 23, 0.18);
+
+  /* ---- Layout ---- */
+  --max-width: 1240px;
+  --header-height: 72px;
+  --bottom-nav-height: 68px;
+
+  /* ---- Transições ---- */
+  --ease-elegant: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 220ms;
+  --dur-mid: 420ms;
+  --dur-slow: 900ms;
+}
